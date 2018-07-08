@@ -1,11 +1,17 @@
+// /// <reference path="" />
+
 import * as THREE from 'three';
+import * as Stats from 'stats.js';
 
 import 'reset-css';
 import './index.scss';
 
 var camera: any, scene: any, renderer: any;
 var geometry, material, mesh: any;
- 
+
+var stats = new Stats();
+
+
 init();
 animate();
  
@@ -24,19 +30,22 @@ function init() {
  
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setSize( window.innerWidth, window.innerHeight );
+    stats.showPanel(0);
+
     document.getElementById('main').appendChild( renderer.domElement );
+    document.getElementById('main').appendChild( stats.dom );
  
 }
  
 function animate() {
  
-    requestAnimationFrame( animate );
- 
+    stats.begin();
+	// monitored code goes here
     mesh.rotation.x += 0.01;
     mesh.rotation.y += 0.02;
- 
     renderer.render( scene, camera );
- 
+	stats.end();
+    requestAnimationFrame( animate );
 }
 
 export {};

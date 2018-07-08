@@ -27,6 +27,7 @@
     "postcss-flexbugs-fixes": "^3.2.0",
     "postcss-loader": "^2.0.10",
     "sass-loader": "^6.0.6",
+    "stats.js": "^0.17.0",
     "style-loader": "^0.19.1",
     "ts-loader": "^4.4.2",
     "typescript": "^2.9.2",
@@ -40,8 +41,10 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@types/stats.js": "^0.17.0",
     "@types/three": "^0.92.12",
     "babel-runtime": "^6.26.0",
-    "reset-css": "^4.0.1"
+    "reset-css": "^4.0.1",
+    "three": "^0.94.0"
   }
 }
